@@ -1,12 +1,26 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { BoutonsService } from './services/boutons.service';
+import { Observable } from 'rxjs';
+import { Bouton } from './interfaces/bouton.interface';
+import { InstructionsComponent } from './components/instructions/instructions.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  imports: [
+    InstructionsComponent,
+  ],
 })
 export class AppComponent {
-  title = 'exo-angular';
+
+  private readonly boutonsService = inject(BoutonsService);
+
+  get boutons(): Observable<Bouton[]> {
+    return this.boutonsService.getBoutons();
+  }
+
+  onClickBouton(bouton: string): void {
+    console.log(`Bouton cliqué: ${bouton}`);
+  }
 }
