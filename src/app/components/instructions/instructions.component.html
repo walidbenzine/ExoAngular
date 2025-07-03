@@ -3,10 +3,10 @@
   <span>Etape 1 :</span>
   <ul>
     <li>
-      A chaque clic sur un bouton il faudra colorier son background en bleu ( #bebeff ) pour indiquer qu'il est sélectionnée.
+      A chaque clic sur un bouton il faudra colorier son background avec la couleur <strong> <code>#bebeff</code> </strong>  pour indiquer qu'il est sélectionnée.
     </li>
     <li>
-      Afficher la description du bouton sélectionné en dessous de celui-ci.
+      Afficher la description associée au bouton sélectionné.
     </li>
     <li>
       Un seul bouton peut être sélectionner à la fois (donc une seule description visible).
@@ -15,13 +15,31 @@
   <span>Etape 2 :</span>
   <ul>
     <li>
-        Utiliser le service <code>DataService</code> pour récupérer la liste des boutons et leur description.
+        Utiliser le service <strong> <code>DataService</code> </strong>  pour récupérer la liste des boutons et leur description.
     </li>
     <li>
-        Afficher la liste des boutons et leur description dans le template <code>app.component.html</code>.
+        Afficher la liste des boutons et leur description dans le template <strong> <code>app.component.html</code> </strong> .
     </li>
     <li>
         Garder le même comportement que l'étape 1.
+    </li>
+  </ul>
+  <span>Etape 3 :</span>
+  <ul>
+    <li>
+      Utiliser le composant <strong> <code>app-card</code> </strong>  afin d'afficher une seule card qui correspond au bouton sélectionné.
+    </li>
+    <li>
+      Le titre de la card doit être au format <strong>Card 1</strong>, <strong>Card 2</strong>, etc. en fonction du bouton sélectionné. Ou bien une vue que le composant <strong> <code>app-component</code> </strong>  lui donnera
+    </li>
+    <li>
+      Le contenu de la card doit être la description du bouton sélectionné par défaut. Ou bien une vue que le composant <strong> <code>app-component</code> </strong>  lui donnera.
+    </li>
+    <li>
+      Le passage de la vue doit être au format <strong> <code>&lt;app-card&gt; Vue &lt;/app-card&gt;</code> </strong> .
+    </li>
+    <li>
+      Le bouton 3 doit afficher dans le titre de la card le composant <strong> <code>app-title</code> </strong> . et dans le contenu de la card le composant <strong> <code>app-graph</code> </strong> .
     </li>
   </ul>
 </div>

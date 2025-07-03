@@ -19,8 +19,4 @@ export class AppComponent {
   get boutons(): Observable<Bouton[]> {
     return this.boutonsService.getBoutons();
   }
-
-  onClickBouton(bouton: string): void {
-    console.log(`Bouton cliqué: ${bouton}`);
-  }
 }
