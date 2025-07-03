@@ -8,8 +8,8 @@
     border: solid 1px black;
     margin-top: 20px;
     padding: 20px;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 150px);
     align-items: center;
     justify-content: center;
     gap: 30px;
