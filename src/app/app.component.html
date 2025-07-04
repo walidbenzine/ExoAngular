@@ -3,24 +3,34 @@
 
   <h3>Etape 1 & 2</h3>
   <div class="container">
-
-    <button>Bouton 1</button>
-
-    <button>Bouton 2</button>
-
-    <button>Bouton 3</button>
-
-    <button>Bouton 4</button>
-
-    <span>Description 1</span>
-    <span>Description 2</span>
-    <span>Description 3</span>
-    <span>Description 4</span>
-
+    <button *ngFor="let button of boutons | async" (click)="clickButton(button.id)" [ngClass]="{'clicked':value === button.id}">{{button.titre}}</button>
+    <ng-container *ngFor="let button of boutons | async" >
+      <span *ngIf="value == button.id">{{button.description}}</span>
+    </ng-container>
+    
   </div>
 
   <h3>Etape 3</h3>
-  <div class="container">
+  <div class="container" *ngIf="boutons | async as bts">
+    <button *ngFor="let button of bts" (click)="clickButton(button.id)" [ngClass]="{'clicked':value === button.id}">{{button.titre}}</button>
+    <ng-container *ngIf="bts && value as selectedId">
+      <ng-container *ngIf="getSelectedButton(bts)  as selectedButton">
+        <app-card>
+          <ng-container card-title>
+            <ng-container *ngIf="selectedId !== 3">
+              Card {{ selectedButton.id }}
+            </ng-container>
+            <app-title *ngIf="selectedId === 3"></app-title>
+          </ng-container>
 
+          <ng-container card-content>
+            <ng-container *ngIf="selectedButton.id !== 3">
+              {{ selectedButton.description }}
+            </ng-container>
+            <app-graph *ngIf="selectedButton.id === 3"></app-graph>
+          </ng-container>
+        </app-card>
+      </ng-container>
+    </ng-container>
   </div>
 </div>
