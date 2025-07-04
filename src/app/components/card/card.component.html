@@ -1,8 +1,8 @@
 <div class="card">
     <div class="header">
-        <span>Titre de la card</span>
+        <ng-content select="[card-title]"></ng-content>
     </div>
     <div class="content">
-        <span>Contenu de la card</span>
+        <ng-content select="[card-content]"></ng-content>
     </div>
 </div>
